@@ -10,7 +10,7 @@ var footer =
                 '</div>' +
                 '<div class="col l4 offset-l2 s12">' +
                     '<h5 class="white-text">Acerca de Plainer</h5>' +
-                    '<p id="about">Plainer es una aplicación diseñada como objetivo del proyecto final del ciclo de Desarrollo de Aplicaciones Web.</p>' +
+                    '<p id="about">Plainer es una aplicación diseñada con el proyecto final del ciclo superior de Desarrollo de Aplicaciones Web como objetivo</p>' +
                 '</div>' +
             '</div>' +
         '</div>' +
