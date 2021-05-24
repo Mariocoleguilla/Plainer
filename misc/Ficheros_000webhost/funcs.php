@@ -50,7 +50,7 @@ if (isset($_GET['checkBBDD'])) {
     try {
         $conn = new PDO("mysql:host=$servername", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $stmt = $conn->query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'id5412417_plainer'");
+        $stmt = $conn->query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'id5412417_development'"); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         echo $stmt->fetchColumn();
         $conn = null;
     }
@@ -65,7 +65,7 @@ if (isset($_GET['createBBDD'])) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try {
             $hashPassword = password_hash("plainplanner", PASSWORD_DEFAULT);
-            $sql = "INSERT INTO id5412417_plainer.users (user, password)
+            $sql = "INSERT INTO id5412417_development.users (user, password) /*id5412417_plainer o id5412417_development BBDD alternativa*/
             VALUES(\"admin\", '" . $hashPassword . "')";
             if ($conn->exec($sql) > 0) {
                 $advices .= "Usuario añadido con éxito\n";
@@ -85,7 +85,7 @@ if (isset($_GET['createBBDD'])) {
 if (isset($_GET['queryAll'])) {
     $dates = array();
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT * FROM events";
@@ -109,7 +109,7 @@ if (isset($_GET['queryAll'])) {
 if (isset($_GET['queryDay'])) {
     $data = array();
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT * FROM events WHERE date = '" . $_GET['queryDay'] . "'";
@@ -133,7 +133,7 @@ if (isset($_GET['queryDay'])) {
 if (isset($_GET['queryUser'])) {
     $loginObj = json_decode($_GET['queryUser']);
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT password FROM users WHERE user = '" . $loginObj->user . "'";
@@ -153,7 +153,7 @@ if (isset($_GET['queryUser'])) {
 if (isset($_GET['insertEvent'])) {
     $objInsertion = json_decode($_GET['insertEvent']);
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "INSERT INTO events (date, event, hours, color)
@@ -167,7 +167,7 @@ if (isset($_GET['insertEvent'])) {
 }
 if (isset($_GET['deleteEvent'])) {
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "DELETE FROM events WHERE id=" . $_GET['deleteEvent'];
@@ -181,7 +181,7 @@ if (isset($_GET['deleteEvent'])) {
 if (isset($_GET['editEvent'])) {
     $objUpdate = json_decode($_GET['editEvent']);
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "UPDATE events SET event = '" . $objUpdate->event . "', hours='" . $objUpdate->hours . "', color='" . $objUpdate->color . "' WHERE id=" . $objUpdate->id;
@@ -196,7 +196,7 @@ if (isset($_GET['eventsQuery'])) {
     $objEventsQuery = json_decode($_GET['eventsQuery']);
     $eventsData = array();
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=id5412417_plainer", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=id5412417_development", $username, $password); /*id5412417_plainer o id5412417_development BBDD alternativa*/
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "SELECT * FROM events WHERE date >= CAST('" . $objEventsQuery->from . "' AS UNSIGNED)
