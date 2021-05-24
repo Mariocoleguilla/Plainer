@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "id5412417_admin";
-$password = "plain+planner";
+$username = "id5412417_development"; /*id5412417_development para id5412417_plainer, id5412417_development para id5412417_development */
+$password = "}1J8>ya?taz\9Tq="; /*plain+planner para id5412417_plainer, }1J8>ya?taz\9Tq= para id5412417_development*/
 /*************************Year*************************/
 if (isset($_GET['yearRequest'])) {
     echo $_SESSION['year'];
