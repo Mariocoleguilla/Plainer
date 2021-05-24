@@ -21,22 +21,6 @@ if (isset($_GET['monthChange'])) {
     echo $_GET['monthChange'];
 }
 /*************************Month*************************/
-/*************************Week*************************/
-//Ya que la semana se tiene que establecer mediante momentJs, no se puede hacer isset en código sin una llamada ajax
-/*DEPRECATED if (isset($_GET['weekSet'])) {
-    if (!isset($_SESSION['week'])) {
-        $_SESSION['week'] = $_GET['weekSet'];
-        echo $_GET['weekSet'];
-    }
-}
-if (isset($_GET['weekRequest'])) {
-    echo $_SESSION['week'];
-}
-if (isset($_GET['weekChange'])) {
-    $_SESSION['week'] = $_GET['weekChange'];
-    echo $_GET['weekChange'];
-}*/
-/*************************Week*************************/
 /*************************View*************************/
 if (isset($_GET['viewRequest'])) {
     echo $_SESSION['view'];
@@ -67,8 +51,7 @@ if (isset($_GET['checkBBDD'])) {
         $conn = new PDO("mysql:host=$servername", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $conn->query("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'id5412417_plainer'");
-        //echo $stmt->fetchColumn();
-        echo "1";
+        echo $stmt->fetchColumn();
         $conn = null;
     }
     catch(PDOException $e) {
