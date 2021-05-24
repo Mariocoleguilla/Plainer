@@ -1254,6 +1254,17 @@ if (!isset($_SESSION['view'])) {
                             }
                         }
                     });
+					/**
+					 * Para quitar el banner de la web de hosting 000webhostapp
+					 */
+					$("div").each(function (index, value) {
+						if ($(this).attr("style") == "text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;") {
+							$(this).remove();
+						}
+					});
+					/**
+					 * Para quitar el banner de la web de hosting 000webhostapp
+					 */
                 });
             });
         });

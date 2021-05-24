@@ -527,13 +527,13 @@ function yearView() {
                                 break;
                             case "single":
                                 //Dual color
-                                $("#" + dates[i].date).css("background", "linear-gradient(135deg, " + firstColor + " 50%, " + colorTraductor(dates[i].color) + " 50%)");
+                                $("#" + dates[i].date).css("background", "linear-gradient(135deg, " + colorTraductor($("#" + dates[i].date).attr("class").split(" ")[1]) + " 50%, " + colorTraductor(dates[i].color) + " 50%)");
                                 $("#" + dates[i].date).attr("data-color", "dual");
                                 secondColor = colorTraductor(dates[i].color);
                                 break;
                             case "dual":
                                 //Triple color
-                                $("#" + dates[i].date).css("background", "linear-gradient(135deg, " + firstColor + " 0," + firstColor + " 33%, " + secondColor + " 33%, " + secondColor + " 66%," + colorTraductor(dates[i].color) + " 66%," + colorTraductor(dates[i].color) + " 100%)");
+                                $("#" + dates[i].date).css("background", "linear-gradient(135deg, " + colorTraductor($("#" + dates[i].date).attr("class").split(" ")[1]) + " 0," + colorTraductor($("#" + dates[i].date).attr("class").split(" ")[1]) + " 33%, " + secondColor + " 33%, " + secondColor + " 66%," + colorTraductor(dates[i].color) + " 66%," + colorTraductor(dates[i].color) + " 100%)");
                                 $("#" + dates[i].date).attr("data-color", "triple");
                                 break;
                             case "triple":
