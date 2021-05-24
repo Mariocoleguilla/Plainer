@@ -29,11 +29,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `events` (
-  `id` int(6) NOT NULL,
+  `id` int(6) NOT NULL AUTO_INCREMENT,
   `date` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `event` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `hours` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `color` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `color` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
