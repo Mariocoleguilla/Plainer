@@ -5,7 +5,7 @@ var footer =
             '<div class="row">' +
                 '<div class="col l6 s12">' +
                     '<h5 class="white-text">Sobre el nombre</h5>' +
-                    '<p id="aboutName" class="grey-text text-lighten-4">El nombre de "Plainer" aparece como combinación de la palabra Plain (de diseño simple y plano) y Planner (de planeador de eventos), al igual que la' +
+                    '<p id="aboutName" class="grey-text text-lighten-4">El nombre de "Plainer" aparece como combinación de la palabra Plain (de diseño simple y plano) y Planner (de planeador de eventos), al igual que la ' +
                     'propia palabra como tal (simple, escueto o evidente) que ayuda a reflejar el objetivo de la aplicación</p>' +
                 '</div>' +
                 '<div class="col l4 offset-l2 s12">' +
